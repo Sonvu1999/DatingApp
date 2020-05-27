@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
@@ -34,7 +35,7 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
-
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -52,7 +53,6 @@ export function tokenGetter() {
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditorComponent,
-      
       DateAgoPipe
    ],
    imports: [
@@ -63,11 +63,13 @@ export function tokenGetter() {
       ReactiveFormsModule,
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
+      PaginationModule.forRoot(),
       TabsModule.forRoot(),
       BrowserAnimationsModule,
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
       FileUploadModule,
+      ButtonsModule.forRoot(),
       JwtModule.forRoot({
          config: {
            // tslint:disable-next-line: object-literal-shorthand
