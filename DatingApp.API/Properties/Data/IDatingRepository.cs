@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using DatingApp.API.Properties.models;
 using System.Collections.Generic;
 using DatingApp.API.Helpers;
+using DatingApp.API.Models;
 
 namespace DatingApp.API.Properties.Data
 {
@@ -15,5 +16,8 @@ namespace DatingApp.API.Properties.Data
          Task<Photo> GetPhoto(int id);
          Task<Photo> GetMainPhotoForUser(int userId);
          Task<Like> GetLike(int userId, int recipientId);
+         Task<Message> GetMessage(int id);
+         Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams);
+         Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId);
     }
 } 
